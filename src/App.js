@@ -19,6 +19,7 @@ class App extends React.Component{
 
     async componentDidMount() {
         const fetchedData = await fetchData();
+        console.log(fetchedData);
 
         this.setState({ data: fetchedData });
     }
@@ -83,11 +84,11 @@ class App extends React.Component{
                     <div>
                     <div>
                     <img className={styles.image} src={coronaImage} alt="Covid-19" />
-                    <Cards data={data}/>
+                    {/* <Cards data={data}/> */}
                     <br />
                     <div align="center">
                     <CountryPicker handleCountryChange={this.handleCountryChange}/>
-                    <Charts data={data} country={country}/>
+                    {/* <Charts data={data} country={country}/> */}
                     </div>
                     <br />
                     <br />
