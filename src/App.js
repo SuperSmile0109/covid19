@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Cards, Charts, CountryPicker } from './components';
+import { fetchData } from "./api";
+import styles from './App.module.css';
+import coronaImage from './images/image.png';
+import Particles from "react-particles-js";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import GitHubIcon from '@material-ui/icons/GitHub';
+import { Typography} from "@material-ui/core";
+import Link from "@material-ui/core/Link";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component{
+    state ={
+        data: {},
+        country:'',
+    }
+
+    async componentDidMount() {
+        const fetchedData = await fetchData();
+
+        this.setState({ data: fetchedData });
+    }
+
+    handleCountryChange = async (country) => {
+        const fetchedData = await fetchData(country);
+        this.setState({ data: fetchedData, country:country });
+
+
+    }
+    handleChange;
+    handleClick;
+    render() {
+        const {data, country} = this.state;
+            return (
+                <div style={{backgroundColor: 'white'}}>
+                 Hello
+                </div>
+            )
+    }
 }
-
 export default App;
