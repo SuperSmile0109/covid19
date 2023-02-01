@@ -1,5 +1,4 @@
 import React from 'react';
-import { fetchData } from "./api";
 
 
 class App extends React.Component{
