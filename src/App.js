@@ -5,7 +5,7 @@ class App extends React.Component{
     render() {
             return (
                 <div style={{backgroundColor: 'white'}}>
-                 Hello
+                 Hello World
                 </div>
             )
     }
